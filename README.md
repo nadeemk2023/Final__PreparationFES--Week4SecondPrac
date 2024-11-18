@@ -7,10 +7,10 @@
 # 2 - Ask Questions
 
 ```
-   index.html
+   index.js
 ```
 
-- What is required for `index.html` to function correctly for our end goal since we have no directions we need to formulate our questions to navigate building our directions and game plan
+- What is required for `index.js` to function correctly for our end goal since we have no directions we need to formulate our questions to navigate building our directions and game plan
 - Which element will we select to change the **inner html** of once we receive a response from our fetch request
 - What is the API we will be fetching from and what is requred in order for this fetch method to work correctly?
 - How do we unlock a promise? And how would we convert a response into something we can use in a function to help us render to our page?
@@ -70,3 +70,41 @@ user.html
   - We will use this number to update the value within `local storage` to update the rendered posts to the page for our website visitor
 
 ---
+
+# 4 - Make a plan
+
+```
+index.js
+```
+
+- Create a renderUsers function that will:
+
+  - Fetch users from the API
+  - unlock that response with an async/await function
+  - Use `json()` to convert that response into data we can use of the users
+  - We will then feed these users into our function below that creates the HTML structure for each user and render dynamically to the page with the user's:
+    - `User's name`
+    - `User's Email`
+    - `User's Phone Number`
+    - `User's Website`
+
+- Create a function userHTML that will:
+  - Take the user's information which will be an array of user objects
+    create a user-card for each user in the array using `map` & `join()`
+  - This function will have a parameter of a `user` passed to it as well from renderUsers
+  - This will be fed into our renderUsers function that will update the innerhtml of `user-list` to reflect all users after the array of users has been mapped over
+- Add an `eventListener` to each user-card that will trigger a function to create key pair value in `local storage` that persist's the selected user's id for use with `user.html` and `user.js` later
+  - This event listener needs to pass the event.target.value as the value for the key pair in local storage
+- We will also use this function to navigate the user from `index.html` to `user.html` with `window.location.origin` in the string value for the href used to update the url on navigation
+
+```
+user.js & user.html
+```
+
+_Most of what will be listed below will be applicable for primarily user.js_
+
+- We will need to capture the selected userId in a global variable from local storage
+- We will use this id to dynamically receive a response for the selected user from this API: `"https://jsonplaceholder.typicode.com/posts?userId=:id"`
+  - This will be in a getUserPosts function which will have a parameter for the userID which will either be passed in as an argument or retrieved from local storage
+- We will need another function for postsHTML that will map over the array of objects above to dynamically render to the page updating the `post-list`
+- Update the input type to number to match our mockup goals of being able to decrement/increment the selected user ID which will need to update in local storage
