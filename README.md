@@ -61,4 +61,12 @@ user.html
   - But there is also a `window.location.origin` we will use this as the prefix and then add with a template string the `user.html` portion of the new href we want to navigate the user to
 - To render the correct posts for the selected user we will need to fetch from this API: `"https://jsonplaceholder.typicode.com/posts?userId=:id"`
   - Here we will need to change the `:id` portion of the href to the selected user to receive a response with that specific user's posts after unlocking both the response and the json conversion promise.
--
+- We will achieve the above goal by adding an `eventListener` to each `user-card` within the `user-list` and then pass in the `userId` from `event.target.value`
+  - we will then store this in `local storage` with a key pair value in this case `userId:id` where the `id` is the value being passed in from our event listener
+  - This will allow the selected user's id to persist and be accessible through local storage
+    - From here we will dynamically get a response from the API above to get the user's posts
+  - Then we will render the specific user's posts to the page for our website visitor using the starter html code in `user.html`
+- We will update the `input` type from `text` to `number` to allow a toggle on the side of input entry box with arrows to increment or decrement the id number
+  - We will use this number to update the value within `local storage` to update the rendered posts to the page for our website visitor
+
+---
