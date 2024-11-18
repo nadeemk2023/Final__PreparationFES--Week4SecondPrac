@@ -7,10 +7,11 @@ async function renderUsers() {
   const users = await fetch('https://jsonplaceholder.typicode.com/users');
   const usersData = await users.json();
 
-  userListEl.innerHTML = usersData
-    .map(
-      user =>
-        `<div class="user">
+  userListEl.innerHTML = usersData.map(user => userHTML(user)).join('');
+}
+
+function userHTML(user) {
+  return `<div class="user" onclick=showUserPosts(${user.id})>
           <div class="user-card">
             <div class="user-card__container">
               <h3>${user.name}</h4>
@@ -19,9 +20,13 @@ async function renderUsers() {
                 <p><b>Website:</b> <a href="https://${user.website}" target="_blank">${user.website}</a></p>
             </div>
           </div>
-        </div>`
-    )
-    .join('');
+        </div>`;
+}
+
+function showUserPosts(userId) {
+  localStorage.setItem('userId', userId);
+  window.location.href = `${window.location.origin}/user.html`;
+  console.log(`now navigating to user.html for user ${userId}`);
 }
 
 renderUsers();

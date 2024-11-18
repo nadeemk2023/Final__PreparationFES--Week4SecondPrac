@@ -89,14 +89,14 @@ index.js
     - ~~`User's Website`~~
   - ~~We will then assigned the newly created html structure to the innerHtml of `user-list`~~
 
-- Create a function userHTML that will:
-  - Take the user's information which will be an array of user objects
-    create a user-card for each user in the array using `map` & `join()`
-  - This function will have a parameter of a `user` passed to it as well from renderUsers
-  - This will be fed into our renderUsers function that will update the innerhtml of `user-list` to reflect all users after the array of users has been mapped over
-- Add an `eventListener` to each user-card that will trigger a function to create key pair value in `local storage` that persist's the selected user's id for use with `user.html` and `user.js` later
-  - This event listener needs to pass the event.target.value as the value for the key pair in local storage
-- We will also use this function to navigate the user from `index.html` to `user.html` with `window.location.origin` in the string value for the href used to update the url on navigation
+- ~~Create a function userHTML that will:~~
+  - ~~Take the user's information which will be an user object
+    create a user-card for each user in the array using `map`~~
+  - ~~This function will have a parameter of a `user` passed to it as well from renderUsers~~
+  - ~~This will be fed into our renderUsers function that will update the innerhtml of `user-list` to reflect all users after the array of users has been mapped over~~
+- ~~Add an `eventListener` to each user-card that will trigger a function to create key pair value in `local storage` that persist's the selected user's id for use with `user.html` and `user.js` later~~
+  - ~~This event listener needs to pass the `user.id` as the value for the key pair in local storage~~
+- ~~We will also use this function to navigate the user from `index.html` to `user.html` with `window.location.origin` in the string value for the href used to update the url on navigation~~
 
 ```
 user.js & user.html
