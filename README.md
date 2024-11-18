@@ -79,14 +79,15 @@ index.js
 
 - Create a renderUsers function that will:
 
-  - Fetch users from the API
-  - unlock that response with an async/await function
-  - Use `json()` to convert that response into data we can use of the users
-  - We will then feed these users into our function below that creates the HTML structure for each user and render dynamically to the page with the user's:
-    - `User's name`
-    - `User's Email`
-    - `User's Phone Number`
-    - `User's Website`
+  - ~~Fetch users from the API~~
+  - ~~unlock that response with an async/await function~~
+  - ~~Use `json()` to convert that response into data we can use of the users~~
+  - ~~We will then feed these users into our function below that creates the HTML structure for each user and render dynamically to the page with the user's:~~
+    - ~~`User's name`~~
+    - ~~`User's Email`~~
+    - ~~`User's Phone Number`~~
+    - ~~`User's Website`~~
+  - ~~We will then assigned the newly created html structure to the innerHtml of `user-list`~~
 
 - Create a function userHTML that will:
   - Take the user's information which will be an array of user objects
