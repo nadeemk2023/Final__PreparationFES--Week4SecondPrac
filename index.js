@@ -26,7 +26,6 @@ function userHTML(user) {
 function showUserPosts(userId) {
   localStorage.setItem('userId', userId);
   window.location.href = `${window.location.origin}/user.html`;
-  console.log(`now navigating to user.html for user ${userId}`);
 }
 
 renderUsers();

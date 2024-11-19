@@ -2,12 +2,26 @@ const userId = localStorage.getItem('userId');
 const postListEl = document.querySelector('.post-list');
 
 async function getUserPosts(userId) {
-  const posts = await fetch(
-    `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
-  );
-  const postsData = await posts.json();
+  try {
+    const posts = await fetch(
+      `https://jsonplaceholder.typicode.com/posts?userId=${userId}`
+    );
+    const postsData = await posts.json();
+    if (postsData.length === 0) {
+      alert(
+        'An error occured while fetching posts for this user. Redirecting to homepage'
+      );
+      window.location.href = `${window.location.origin}/index.html`;
+    }
 
-  postListEl.innerHTML = postsData.map(post => postsHTML(post)).join('');
+    postListEl.innerHTML = postsData.map(post => postsHTML(post)).join('');
+  } catch (error) {
+    console.error('Error fetching posts', error);
+    alert(
+      'An error occured while fetching posts for this user. Redirecting to homepage'
+    );
+    window.location.href = `${window.location.origin}/index.html`;
+  }
 }
 
 function postsHTML(post) {
