@@ -104,8 +104,9 @@ user.js & user.html
 
 _Most of what will be listed below will be applicable for primarily user.js_
 
-- We will need to capture the selected userId in a global variable from local storage
-- We will use this id to dynamically receive a response for the selected user from this API: `"https://jsonplaceholder.typicode.com/posts?userId=:id"`
-  - This will be in a getUserPosts function which will have a parameter for the userID which will either be passed in as an argument or retrieved from local storage
-- We will need another function for postsHTML that will map over the array of objects above to dynamically render to the page updating the `post-list`
-- Update the input type to number to match our mockup goals of being able to decrement/increment the selected user ID which will need to update in local storage
+- ~~We will need to capture the selected userId in a global variable from local storage~~
+- ~~We will use this id to dynamically receive a response for the selected user from this API: `"https://jsonplaceholder.typicode.com/posts?userId=:id"`~~
+  - ~~This will be in a getUserPosts function which will have a parameter for the userID which will either be passed in as an argument or retrieved from local storage~~
+- ~~We will need another function for postsHTML that will convert over the posts passed in to HTML to render to the page updating the `post-list`.innerHTML~~
+- ~~Update the input type to number to match our mockup goals of being able to decrement/increment the selected user ID~~
+- Create a function that will trigger `onChange` of the input field to update the `userId` in local storage and invoke updating the rendered posts to the page to the selected user id
