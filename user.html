@@ -15,7 +15,11 @@
       </a>
       <div class="post__search--container">
         <label class="post__search--label"> Search by Id </label>
-        <input type="number" placeholder="1" />
+        <input
+          type="number"
+          placeholder="enter user id"
+          onchange="searchUserPosts(event)"
+        />
       </div>
     </div>
     <div class="post-list">

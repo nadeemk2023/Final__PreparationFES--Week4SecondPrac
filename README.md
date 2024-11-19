@@ -109,4 +109,7 @@ _Most of what will be listed below will be applicable for primarily user.js_
   - ~~This will be in a getUserPosts function which will have a parameter for the userID which will either be passed in as an argument or retrieved from local storage~~
 - ~~We will need another function for postsHTML that will convert over the posts passed in to HTML to render to the page updating the `post-list`.innerHTML~~
 - ~~Update the input type to number to match our mockup goals of being able to decrement/increment the selected user ID~~
-- Create a function that will trigger `onChange` of the input field to update the `userId` in local storage and invoke updating the rendered posts to the page to the selected user id
+- ~~Create a function that will trigger `onChange` of the input field to update the `userId` in local storage and invoke updating the rendered posts to the page to the selected user id~~
+  - ~~This function will also update the global variable to the new userId~~
+  - ~~Also update the local storage Id as discussed above~~
+  - ~~Lastly to re-render the correct posts for the selected user invoke `getUserPosts` passing in the updated userId~~

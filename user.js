@@ -21,4 +21,10 @@ function postsHTML(post) {
     </div>`;
 }
 
+function searchUserPosts(event) {
+  const newUserId = event.target.value;
+  localStorage.setItem('userId', newUserId);
+  getUserPosts(newUserId);
+}
+
 getUserPosts(userId);
