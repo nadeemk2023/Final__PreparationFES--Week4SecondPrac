@@ -10,7 +10,7 @@
    index.js
 ```
 
-- What is required for `index.js` to function correctly for our end goal since we have no directions we need to formulate our questions to navigate building our directions and game plan
+- What is required for `index.js` to function correctly for our end goal since we have no written directions we need to formulate our questions to navigate building our directions and game plan
 - Which element will we select to change the **inner html** of once we receive a response from our fetch request
 - What is the API we will be fetching from and what is requred in order for this fetch method to work correctly?
 - How do we unlock a promise? And how would we convert a response into something we can use in a function to help us render to our page?
